@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Amar Sham">
+    <title>Paint App | Amar Sham</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="script.js" defer></script>
+    <script src="https://kit.fontawesome.com/c353d71a36.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <section class="tools-board">
+
+            <div class="row">
+                <label for="" class="title"><strong>Tools</strong></label>
+                <ul class="options">
+                    <li class="option tool" id="pencil">
+                        <i class="fas fa-pencil" id="icon"></i>
+                        <span>Pencil</span>
+                    </li>
+                    <li class="option active tool" id="brush">
+                        <i class="fas fa-brush" id="icon"></i>
+                        <span>Brush</span>
+                    </li>
+                    <li class="option tool" id="eraser">
+                        <i class="fas fa-eraser" id="icon"></i>
+                        <span>Eraser</span>
+                    </li>
+                    <li class="option">
+                        <input type="range" id="size-slider" min="1" max="30" value="5">
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row colors">
+
+                <label for="" class="title">Colors</label>
+
+                <ul class="options">
+                    <li class="option" style="background-color: #000000;"></li>
+                    <li class="option selected" style="background-color: #ff0000;"></li>
+                    <li class="option" style="background-color: #0000ff;"></li>
+                    <li class="option" style="background-color: #ffff00;"></li>
+                    <li class="option">
+                        <input type="color" value="#00FF00" name="" id="color-picker">
+                    </li>
+                </ul>
+
+            </div>
+
+            <div class="row">
+                <label for="" class="title"> <strong>Shapes</strong></label>
+                <ul class="options">
+                    <li class="option tool" id="rectangle">
+                        <i class="fa-solid fa-dice-one"></i>
+                        <span>Rectangle</span>
+                    </li>
+                    <li class="option tool" id="circle">
+                        <i class="fa-regular fa-circle"></i>
+                        <span>Circle</span>
+                    </li>
+                    <li class="option tool" id="triangle">
+                        <i class="fa-solid fa-mountain"></i>
+                        <span>Triangle</span>
+                    </li>
+                    <li class="option tool" id="square">
+                        <i class="far fa-square"></i>
+                        <span>Square</span>
+                    </li>
+                    <li class="option tool" id="hexagon">
+                        <i class="fa-solid fa-cube"></i>
+                        <span>Hexagon</span>
+                    </li>
+                    <li class="option tool" id="pentagon">
+                        <i class="fa-solid fa-dice-d6"></i>
+                        <span>Pentagon</span>
+                    </li>
+                    <li class="option tool" id="line">
+                        <i class="fa-solid fa-grip-lines"></i>
+                        <span>Line</span>
+                    </li>
+                    <li class="option tool" id="arrow">
+                        <i class="fa-solid fa-arrow-up"></i>
+                        <span>Arrow</span>
+                    </li>
+                    <li class="option">
+                        <input type="checkbox" id="fill-color">
+                        <label for="fill-color"> Fill Color</label>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="row buttons">
+                <button class="clear-canvas">Clear Canvas</button>
+                <button class="save-img">Save As Image</button>
+            </div>
+
+            <div class="row canvas-settings">
+                <label class="title">Canvas</label>
+                <ul class="options">
+                    <li class="option">
+                        <label for="ratio-select">Aspect</label>
+                        <select id="ratio-select">
+                            <option value="auto">Fit container (auto)</option>
+                            <option value="16:9">16:9</option>
+                            <option value="4:3">4:3</option>
+                            <option value="1:1">1:1</option>
+                        </select>
+                    </li>
+                    <li class="option">
+                        <label for="preset-select">Preset</label>
+                        <select id="preset-select">
+                            <option value="fit">Fit container</option>
+                            <option value="800x600">800 × 600</option>
+                            <option value="1280x720">1280 × 720</option>
+                            <option value="1920x1080">1920 × 1080</option>
+                            <option value="custom">Custom</option>
+                        </select>
+                    </li>
+                    <li class="option">
+                        <label for="canvas-width">Width (px)</label>
+                        <input id="canvas-width" type="number" min="1" step="1" />
+                    </li>
+                    <li class="option">
+                        <label for="canvas-height">Height (px)</label>
+                        <input id="canvas-height" type="number" min="1" step="1" />
+                    </li>
+                    <li class="option">
+                        <label><input id="scale-content" type="checkbox" checked /> Scale content when resizing</label>
+                    </li>
+                    <li class="option">
+                        <button id="apply-canvas-size" class="save-img">Apply Size</button>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+        <section class="drawing-board">
+            <div class="canvas-card">
+                <canvas></canvas>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
